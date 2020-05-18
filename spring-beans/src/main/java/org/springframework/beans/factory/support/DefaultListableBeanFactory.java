@@ -721,7 +721,7 @@ public class DefaultListableBeanFactory extends AbstractAutowireCapableBeanFacto
 	@Override
 	public void preInstantiateSingletons() throws BeansException {
 		if (logger.isDebugEnabled()) {
-			logger.debug("Pre-instantiating singletons in " + this);
+		logger.debug("Pre-instantiating singletons in " + this);
 		}
 
 		// Iterate over a copy to allow for init methods which in turn register new bean definitions.
@@ -752,6 +752,7 @@ public class DefaultListableBeanFactory extends AbstractAutowireCapableBeanFacto
 					}
 				}
 				else {
+					//hpf4 开始实例化普通bean
 					getBean(beanName);
 				}
 			}
